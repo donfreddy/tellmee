@@ -1,0 +1,51 @@
+{
+  "name": "tellmee",
+  "description": "",
+  "version": "1.0.0",
+  "author": {
+    "name": "Don Freddy",
+    "email": "freddytamwo@gmail.com",
+    "url": "https://github.com/Donfreddy"
+  },
+  "main": "bin/tellmee",
+  "bin": {
+    "@donfreddy/tellmee": "bin/tellmee",
+    "tellmee": "bin/tellmee"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "keywords": [
+    "joke",
+    "fun",
+    "jest",
+    "funny",
+    "quote",
+    "joking",
+    "tellmee",
+    "inspire",
+    "inspiration"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Donfreddy/tellmee.git"
+  },
+  "license": "MIT",
+  "preferGlobal": true,
+  "homepage": "",
+  "files": [
+    "bin/",
+    "lib/",
+    "templates/"
+  ]
+}
