@@ -1,4 +1,86 @@
 #!/usr/bin/env node
 
-require = require("esm")(module /*, options*/);
-require("../index").cli(process.argv);
+var program = require("commander");
+var version = require("../package").version;
+
+/**
+ * Commander
+ *
+ */
+
+program.configureHelp({
+  subcommandTerm: (cmd) => cmd.name(), // Just show the name, instead of short usage.
+});
+
+program
+  .name("\n  tellmee")
+  .usage("[options] \n  tellmee <command>")
+  .version("v" + version, "-v, --version", "Show version")
+  .helpOption("-h, --help", "Output usage information")
+  .addHelpText("beforeAll", " ")
+  .addHelpText("after", "\ntellmee <command> -h  quick help on <command>")
+  .addHelpText("after", `\ntellmee@${version}`)
+  .addHelpCommand(false)
+  .allowExcessArguments(false);
+
+/**
+ * Joke command
+ */
+program
+  .command("joke")
+  .description("display joke")
+  .addOption(
+    new program.Option("-c, --cat <category>", "display joke by category")
+      .choices(["global", "dev", "dark", "limit", "beauf", "blondes"])
+      .default("global")
+  )
+  .addOption(
+    new program.Option(
+      "-l, --lang <language>",
+      "display joke by setting language"
+    )
+      .choices(["en", "fr"])
+      .default("en")
+  )
+  .action((options) => {
+    const opts = {
+      command: program.args[0],
+      ...options,
+    };
+    require("../index")(opts);
+  });
+
+/**
+ * Quote command
+ */
+program
+  .command("quote")
+  .description("display quote")
+  .addOption(
+    new program.Option("-c, --cat <category>", "display quote by category")
+      .choices(["global", "dev", "dark", "limit", "beauf", "blondes"])
+      .default("global")
+  )
+  .action((options) => {
+    const opts = {
+      command: program.args[0],
+      ...options,
+    };
+    require("../index")(opts);
+  });
+
+/**
+ * Inspire command
+ */
+program
+  .command("inspire")
+  .description("display inspire")
+  .action((options) => {
+    const opts = {
+      command: program.args[0],
+      lang: "en",
+    };
+    require("../index")(opts);
+  });
+
+program.parse(process.argv);

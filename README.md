@@ -7,19 +7,20 @@ $ npm install -g tellmee
 How to use:
 
 ```bash
-$ tellmee <command>
+$ tellmee <command> [--options]
 ```
 
 Example:
 
 ```bash
-$ tellmee joke
+$ tellmee quote --cat=programming
 ```
 
 Output:
 
 ```bash
-Why did the programmer quit his job? - Because he didn\'t get arrays.
+Measuring programming progress by lines of code is like measuring aircraft
+building progress by weight. - Bill Gates
 ```
 
 ## Command Line Options
@@ -33,8 +34,9 @@ This tellmee cli can also be further configured with the following command line 
     [--options]
 
         --version         output the version number
-    -c, --cat             get joke or quote by category
-    -l, --lang            add language support (en|fr)
+    -c, --cat             display joke by specific category support (general|programming)
+                          (defaults  to random)
+    -l, --lang            add language support (en|fr) (defaults to en)
     -h, --help            output usage information
 
 ## License
