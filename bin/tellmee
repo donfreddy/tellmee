@@ -8,6 +8,7 @@ const data = require("../lib/data");
 
 // Waiting for update and notify
 require("../lib/update_notifier");
+
 /**
  * Tellmee CLI
  */

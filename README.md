@@ -15,39 +15,39 @@ $ npm install -g tellmee
 ## Usage:
 
 ```bash
-$ tellmee <command> [--options]
+$ tellmee [options] <command>
 ```
 
 Example:
 
 ```bash
-$ tellmee quote --cat programming
+$ tellmee quote --cat=programming
 ```
 
 Output:
 
 ```bash
-Measuring programming progress by lines of code is like measuring aircraft
-building progress by weight. - Bill Gates
+    “Measuring programming progress by lines of code is like measuring aircraft
+    building progress by weight.”
+   ― Bill Gates
 ```
 
 ## Command Line Options
 
-  Usage: tellmee [options] <command>
-  
-  Command line tellmee Application
-  
-  Options:
-    -v, --version        Show version
-    -h, --help           Show usage information
-  
-  Commands:
-    joke|j [options]     Show random joke
-    quote|q [options]    Show random quote
-    inspire|i [options]  Show random inspire quote
-  
-  tellmee <command> -h   Quick help on <command>
+    Usage: tellmee [options] <command>
 
+    Command line tellmee Application
+
+    Options:
+       -v, --version        Show version
+       -h, --help           Show usage information
+
+    Commands:
+       joke|j [options]     Show random joke
+       quote|q [options]    Show random quote
+       inspire|i [options]  Show random inspire quote
+
+    tellmee <command> -h   Quick help on <command
 
 ## Versioning
 
