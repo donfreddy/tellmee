@@ -27,8 +27,8 @@ $ tellmee quote --cat=programming
 Output:
 
 ```bash
-    “Measuring programming progress by lines of code is like measuring aircraft
-    building progress by weight.”
+   “Measuring programming progress by lines of code is like measuring aircraft
+   building progress by weight.”
    ― Bill Gates
 ```
 
@@ -47,7 +47,7 @@ Output:
        quote|q [options]    Show random quote
        inspire|i [options]  Show random inspire quote
 
-    tellmee <command> -h   Quick help on <command
+    tellmee <command> -h   Quick help on <command>
 
 ## Versioning
 
