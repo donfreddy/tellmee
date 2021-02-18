@@ -2,7 +2,7 @@ var chalk = require("chalk");
 var data = require("./lib/data");
 
 module.exports = function (options) {
-  console.log(options.lang);
+  // console.log(options.lang);
 
   if (options.command === "joke") {
     if (options.lang === "fr") {
@@ -13,7 +13,8 @@ module.exports = function (options) {
       }
     } else {
       if (options.cat === "global") {
-        data.getJoke();
+         data.getJoke();
+        //data.getQuote();
       } else {
       }
     }

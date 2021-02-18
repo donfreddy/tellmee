@@ -13,23 +13,23 @@
     "tellmee": "bin/tellmee"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified\""
   },
   "bugs": "https://github.com/Donfreddy/tellmee/issues",
   "dependencies": {
-    "arg": "^5.0.0",
     "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "commander": "^7.1.0",
-    "esm": "^3.2.25",
+    "dotenv": "^8.2.0",
     "inquirer": "^7.3.3",
+    "is-online": "^9.0.0",
+    "prettyjson": "^1.2.1",
+    "update-notifier": "^5.1.0",
     "yargs": "^16.2.0"
-  },
-  "devDependencies": {
-    "eslint": "^7.20.0"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -51,7 +51,7 @@
   },
   "license": "MIT",
   "preferGlobal": true,
-  "homepage": "https://github.com/Donfreddy/tellmee",
+  "homepage": "https://github.com/Donfreddy/tellmee#readme",
   "files": [
     "bin/",
     "lib/",

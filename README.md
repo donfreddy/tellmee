@@ -1,10 +1,18 @@
+# tellmee
+
+[![npm](https://img.shields.io/npm/v/tellmee.svg)](https://www.npmjs.com/package/tellmee)
+![node](http://img.shields.io/node/v/tellmee.svg)
+[![license](https://img.shields.io/npm/l/tellmee.svg)](https://github.com/Donfreddy/tellmee/blob/main/LICENSE)
+
+<!-- > One Paragraph of project description goes here -->
+
 ## Installation
 
 ```sh
 $ npm install -g tellmee
 ```
 
-How to use:
+## Usage:
 
 ```bash
 $ tellmee <command> [--options]
@@ -13,7 +21,7 @@ $ tellmee <command> [--options]
 Example:
 
 ```bash
-$ tellmee quote --cat=programming
+$ tellmee quote --cat programming
 ```
 
 Output:
@@ -25,20 +33,24 @@ building progress by weight. - Bill Gates
 
 ## Command Line Options
 
-This tellmee cli can also be further configured with the following command line flags.
+    Usage:
+      tellmee <command> [options]
 
-    Usage: tellmee <command>
+    Options:
+      -v, --version       Show version
+      -h, --help          Output usage information
 
-    where <command> is one of: joke, quote, inspire
+    Commands:
+      joke [options]      display joke
+      quote               display quote
+      inspire             display inspire
 
-    [--options]
+    tellmee <command> -h  quick help on <command>
 
-        --version         output the version number
-    -c, --cat             display joke by specific category support (general|programming)
-                          (defaults  to random)
-    -l, --lang            add language support (en|fr) (defaults to en)
-    -h, --help            output usage information
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/Donfreddy/tellmee/tags).
 
 ## License
 
-[MIT](LICENSE)
+Copyright © 2021-present, Don Freddy. Released under the [MIT License](LICENSE).

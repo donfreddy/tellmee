@@ -3,6 +3,10 @@
 var program = require("commander");
 var version = require("../package").version;
 
+// Waiting for update and notify
+require("../lib/update_notifier");
+require("../lib/pettry_json");
+
 /**
  * Commander
  *
