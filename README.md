@@ -33,19 +33,21 @@ building progress by weight. - Bill Gates
 
 ## Command Line Options
 
-    Usage:
-      tellmee <command> [options]
+  Usage: tellmee [options] <command>
+  
+  Command line tellmee Application
+  
+  Options:
+    -v, --version        Show version
+    -h, --help           Show usage information
+  
+  Commands:
+    joke|j [options]     Show random joke
+    quote|q [options]    Show random quote
+    inspire|i [options]  Show random inspire quote
+  
+  tellmee <command> -h   Quick help on <command>
 
-    Options:
-      -v, --version       Show version
-      -h, --help          Output usage information
-
-    Commands:
-      joke [options]      display joke
-      quote               display quote
-      inspire             display inspire
-
-    tellmee <command> -h  quick help on <command>
 
 ## Versioning
 

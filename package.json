@@ -1,7 +1,7 @@
 {
   "name": "tellmee",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Don Freddy",
     "email": "freddytamwo@gmail.com",
@@ -13,8 +13,7 @@
     "tellmee": "bin/tellmee"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "scripts": {
     "test": "echo \"No test specified\""
