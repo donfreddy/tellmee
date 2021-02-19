@@ -57,6 +57,22 @@ program
   .option("--no-color", "show random inspire without any color")
   .action((opts) => inspireCommand(opts));
 
+program
+  .command("number")
+  .alias("n")
+  .description("Show interesting facts about numbers")
+  .option(
+    "--type <type>",
+    "type is one of trivia, math, date, or year",
+    "trivia"
+  )
+  .option(
+    "--num <integer>",
+    "For which we will try to show a random available fact (eg. --num=68) or" +
+      " a day of year in the form 'month/day' (eg. --num=2/29) if type is date"
+  )
+  .action((opts) => numberCommand(opts));
+
 program.parse(process.argv);
 
 /**
@@ -104,4 +120,17 @@ function inspireCommand(options) {
   // console.log(options);
 
   data.getInspire(options.color);
+}
+
+/**
+ * Handle number command
+ *
+ * @param options
+ */
+function numberCommand(options) {
+  if (options.num) {
+    data.getCustomNumber(options.num);
+  } else {
+    data.getRandomNumber(options.type);
+  }
 }

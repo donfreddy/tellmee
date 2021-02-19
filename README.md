@@ -46,6 +46,7 @@ Output:
        joke|j [options]     Show random joke
        quote|q [options]    Show random quote
        inspire|i [options]  Show random inspire quote
+       number|n [options]   Show interesting facts about numbers
 
     tellmee <command> -h   Quick help on <command>
 
