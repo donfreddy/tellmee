@@ -2,9 +2,12 @@
 
 const { Command } = require("commander");
 const program = new Command();
-
+const figlet = require("figlet");
+const chalk = require("chalk");
 const version = require("../package").version;
+const author = require("../package").author;
 const data = require("../lib/data");
+const { prettyJsonLog } = require("../lib/pettry_json");
 
 // Waiting for update and notify
 require("../lib/update_notifier");
@@ -107,6 +110,23 @@ function jokeCommand(options) {
  */
 function quoteCommand(options) {
   // console.log(options);
+
+  // var data = {
+  //   version: "v" + version,
+  //   author: author,
+  //   npm: "https://www.npmjs.com/package/tellmee",
+  //   repository: "https://github.com/Donfreddy/tellmee",
+  // };
+
+  // console.log(
+  //   chalk.yellow(
+  //     figlet.textSync("Tellmee  CLI", {
+  //       font: "Ogre",
+  //       horizontalLayout: "fitted",
+  //     })
+  //   )
+  // );
+  // prettyJsonLog(data);
 
   data.getQuote(options.color);
 }

@@ -6,6 +6,8 @@
 
 <!-- > One Paragraph of project description goes here -->
 
+![tellmee](demo.gif)
+
 ## Installation
 
 ```sh
