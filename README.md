@@ -4,7 +4,7 @@
 ![node](http://img.shields.io/node/v/tellmee.svg)
 [![license](https://img.shields.io/npm/l/tellmee.svg)](https://github.com/Donfreddy/tellmee/blob/main/LICENSE)
 
-<!-- > One Paragraph of project description goes here -->
+> Command line tool that provides you with jokes and some more cool information.
 
 ![tellmee](demo.gif)
 
@@ -49,6 +49,7 @@ Output:
        quote|q [options]    Show random quote
        inspire|i [options]  Show random inspire quote
        number|n [options]   Show interesting facts about numbers
+       about|a              About tellmee cli
 
     tellmee <command> -h   Quick help on <command>
 

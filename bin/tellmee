@@ -1,32 +1,40 @@
 #!/usr/bin/env node
 
+require = require("esm")(module /*, options*/);
 const { Command } = require("commander");
 const program = new Command();
-const figlet = require("figlet");
 const chalk = require("chalk");
 const version = require("../package").version;
-const author = require("../package").author;
 const data = require("../lib/data");
-const { prettyJsonLog } = require("../lib/pettry_json");
+const { about } = require("../lib/about");
 
 // Waiting for update and notify
 require("../lib/update_notifier");
 
-/**
- * Tellmee CLI
- */
+program.on("option:*", function (operands) {
+  console.log("Command tellme");
+  process.exitCode = 1;
+});
+
+program.on("command:*", function (operands) {
+  const availableCommands = program.commands.map((cmd) => cmd.name());
+
+  unknownCommand(availableCommands, operands[0]);
+});
+
 program
   .name("tellmee")
   .usage("[options] <command>")
-  .description("Command line tellmee Application")
+  .description("Command line tellmee tool")
   .version("v" + version, "-v, --version", "Show version")
   .helpOption("-h, --help", "Show usage information")
   .addHelpText("beforeAll", " ")
-  .addHelpText("after", "\ntellmee <command> -h Quick help on <command>")
+  .addHelpText("after", "\ntellmee <command> -h   Quick help on <command>")
   .addHelpText("after", `\ntellmee@${version}`)
   .addHelpCommand(false)
   .allowExcessArguments(false);
 
+// Joke Command
 program
   .command("joke")
   .alias("j")
@@ -46,6 +54,7 @@ program
   .option("--no-color", "show random joke without any color")
   .action((opts) => jokeCommand(opts));
 
+// Quote Command
 program
   .command("quote")
   .alias("q")
@@ -53,6 +62,7 @@ program
   .option("--no-color", "show random quote without any color")
   .action((opts) => quoteCommand(opts));
 
+// Inspire Command
 program
   .command("inspire")
   .alias("i")
@@ -60,6 +70,7 @@ program
   .option("--no-color", "show random inspire without any color")
   .action((opts) => inspireCommand(opts));
 
+// Number Command
 program
   .command("number")
   .alias("n")
@@ -75,6 +86,13 @@ program
       " a day of year in the form 'month/day' (eg. --num=2/29) if type is date"
   )
   .action((opts) => numberCommand(opts));
+
+// About cli Command
+program
+  .command("about")
+  .alias("a")
+  .description("About tellmee cli")
+  .action(() => about());
 
 program.parse(process.argv);
 
@@ -108,25 +126,8 @@ function jokeCommand(options) {
  *
  * @param options
  */
-function quoteCommand(options) {
+async function quoteCommand(options) {
   // console.log(options);
-
-  // var data = {
-  //   version: "v" + version,
-  //   author: author,
-  //   npm: "https://www.npmjs.com/package/tellmee",
-  //   repository: "https://github.com/Donfreddy/tellmee",
-  // };
-
-  // console.log(
-  //   chalk.yellow(
-  //     figlet.textSync("Tellmee  CLI", {
-  //       font: "Ogre",
-  //       horizontalLayout: "fitted",
-  //     })
-  //   )
-  // );
-  // prettyJsonLog(data);
 
   data.getQuote(options.color);
 }
@@ -153,4 +154,22 @@ function numberCommand(options) {
   } else {
     data.getRandomNumber(options.type);
   }
+}
+
+/**
+ * Handle unknown command
+ *
+ * @param {[String]} commands Available commands
+ * @param {String} operands unknown command
+ */
+function unknownCommand(commands, operands) {
+  console.error(
+    `
+  ${chalk.red.bold("Error:")} unknown command '${operands}'
+
+  Available commands: ${chalk.green.bold(commands)}
+    `
+  );
+
+  process.exit(1);
 }
