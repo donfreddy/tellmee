@@ -1,7 +1,7 @@
 {
   "name": "tellmee",
   "description": "Simple command line app that provides you with jokes and some cool information",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "Don Freddy <freddytamwo@gmail.com>",
   "main": "bin/tellmee",
   "bin": {
